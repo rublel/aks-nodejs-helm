@@ -11,7 +11,7 @@
     "aks",
     "node"
   ],
-  "author": "Avik Kundu",
+  "author": "Ruben Lellouche",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
