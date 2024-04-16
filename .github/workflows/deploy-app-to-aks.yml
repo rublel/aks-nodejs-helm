@@ -24,7 +24,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build . -t "noderegistries.azurecr.io/aks-nodejs-helm:${{ github.sha }}
+          docker build . -t noderegistries.azurecr.io/aks-nodejs-helm:${{ github.sha }}
           docker push noderegistries.azurecr.io/aks-nodejs-helm:${{ github.sha }}
 
   update-helm-chart:
