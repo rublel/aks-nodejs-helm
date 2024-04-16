@@ -90,8 +90,21 @@ jobs:
       - name: Log in to Helm Registry
         run: helm registry login noderegistries.azurecr.io --username noderegistries --password nazKbCN+6F6hP8F1YmzhWyle1hQHxUIIgQAx+F3rMv+ACRC8DUzu
 
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          client-id: 6a7eceec-399a-462e-be05-8508a526be6e
+          tenant-id: 287e9555-a4e3-48b9-9f39-9c97477c736f
+          subscription-id: f6e80462-2876-4bd9-893f-6802bd537f70
+
+      - name: Set up kubectl
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: NodeRG
+          cluster-name: NodeCluster
+
       - name: Install Helm Chart
-        run: helm install nodeapp noderegistries.azurecr.io/helm/nodeapp:0.${{ github.run_number }}.0.tgz
+        run: helm install nodeapp noderegistries.azurecr.io/helm/nodeapp-0.${{ github.run_number }}.0.tgz
 
       - name: Get the application URL
         run: |
