@@ -101,12 +101,10 @@ jobs:
       - name: Log in to Helm Registry
         run: helm registry login noderegistries.azurecr.io --username noderegistries --password nazKbCN+6F6hP8F1YmzhWyle1hQHxUIIgQAx+F3rMv+ACRC8DUzu
 
-      # - name: Log in to Azure
-      #   uses: azure/login@v1
-      #   with:
-      #     client-id: 6a7eceec-399a-462e-be05-8508a526be6e
-      #     tenant-id: 287e9555-a4e3-48b9-9f39-9c97477c736f
-      #     subscription-id: f6e80462-2876-4bd9-893f-6802bd537f70
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: 1547a768-712a-4113-952a-87e414d0f0d8
 
       - name: Set up kubectl
         uses: azure/aks-set-context@v3
