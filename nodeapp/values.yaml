@@ -7,7 +7,7 @@ image:
   repository: noderegistries.azurecr.io/aks-nodejs-helm
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 912c60c54ba9ec9d8db1663a6faca356422e6477
+  tag: a59d8243f8a3b6526d960aa56ba157db47acf0a3
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
