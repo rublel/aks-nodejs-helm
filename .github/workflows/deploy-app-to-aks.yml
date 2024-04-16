@@ -42,7 +42,7 @@ jobs:
 
       - name: Update Values.yaml
         run: |
-          yq w -i nodeapp/values.yaml image.repository ""noderegistries.azurecr.io/aks-nodejs-helm"
+          yq w -i nodeapp/values.yaml image.repository "noderegistries.azurecr.io/aks-nodejs-helm"
           yq w -i nodeapp/values.yaml image.tag "${{ github.sha }}"
           yq w -i nodeapp/Chart.yaml version "0.${{ github.run_number }}.0"
 
