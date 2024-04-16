@@ -7,7 +7,7 @@ on:
         description: "Environment to deploy"
         required: true
         type: choice
-        default: dev
+        default: production
         options:
           - dev
           - staging
@@ -30,7 +30,7 @@ jobs:
       - name: Log in to Azure Container Registry
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ secrets.ACR_LOGIN_SERVER}}
+          login-server: ${{ secrets.ACR_LOGIN_SERVER }}
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
