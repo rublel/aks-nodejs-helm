@@ -1,6 +1,17 @@
 name: Deploy-App-on-AKS
 
 on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy"
+        required: true
+        type: choice
+        default: dev
+        options:
+          - dev
+          - staging
+          - production
   push:
     branches:
       - develop
