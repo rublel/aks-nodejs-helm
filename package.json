@@ -1,7 +1,7 @@
 {
   "name": "aks-nodejs-helm",
   "version": "1.0.0",
-  "description": "Tutorial guiding how to deploy a simple nodejs application helm chart to AKS using Circle CI",
+  "description": "Nodejs application helm chart to AKS using GitHub Actions",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -25,6 +25,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Lucifergene/aks-nodejs-helm.git"
+    "url": "git@github.com:rublel/aks-nodejs-helm.git"
   }
 }
