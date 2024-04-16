@@ -103,18 +103,18 @@ jobs:
       - name: Log in to Helm Registry
         run: helm registry login ${{ secrets.ACR_LOGIN_SERVER }} --username ${{ secrets.ACR_USERNAME }} --password ${{ secrets.ACR_PASSWORD }}
 
-      # - name: Log in to Azure
-      #   uses: azure/login@v2
-      #   with:
-      #     creds:
-      # - name: Set up kubectl
-      #   uses: azure/aks-set-context@v3
-      #   with:
-      #     resource-group: NodeRG
-      #     cluster-name: NodeCluster
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Set up kubectl
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: NodeRG
+          cluster-name: NodeCluster
 
-      # - name: Install Helm Chart
-      #   run: helm install nodeapp noderegistries.azurecr.io/helm/nodeapp-0.${{ github.run_number }}.0.tgz
+      - name: Install Helm Chart
+        run: helm install ${{ secrets.CHART_NAME }} ${{ secrets.ACR_LOGIN_SERVER }}/helm/${{ secrets.CHART_NAME }}-0.${{ github.run_number }}.0.tgz
 
       - name: Get the application URL
         run: |
