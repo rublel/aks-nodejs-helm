@@ -1,8 +1,13 @@
+name: Deploy-App-on-AKS-2
+
+on:
+  push:
+    branches:
+      - develop
 jobs:
   terraform:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -13,8 +18,7 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
-
-    - name: Build and push Docker image
+      - name: Build and push Docker image
         run: |
           docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/${{ secrets.APP_NAME }}:${{ github.sha }}
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/${{ secrets.APP_NAME }}:${{ github.sha }}
