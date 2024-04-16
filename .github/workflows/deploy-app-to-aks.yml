@@ -3,7 +3,7 @@ name: Deploy-App-on-AKS
 on:
   push:
     branches:
-      - develop2
+      - develop
 
 jobs:
   build-and-push-image:
@@ -19,7 +19,7 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: ${{ secrets.ACR_LOGIN_SERVER }}
-          username: ${{ secrets.ACR_USERNAME }}
+          username: "noderegistries"
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build and push Docker image
