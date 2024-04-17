@@ -24,6 +24,7 @@ on:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+      default: 
       run:
         shell: bash
 
