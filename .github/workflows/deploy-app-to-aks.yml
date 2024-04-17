@@ -24,10 +24,6 @@ on:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
-      default: 
-      run:
-        shell: bash
-
     steps:
       - name: Check out code
         uses: actions/checkout@v2
