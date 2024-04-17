@@ -2,6 +2,7 @@ name: Deploy-App-on-AKS
 
 permissions:
   id-token: write
+  contents: write
 
 on:
   workflow_dispatch:
@@ -64,7 +65,7 @@ jobs:
 
       - name: Commit & Push to GitHub
         run: |
-          git config user.email "rublel.dev@gmail.com"
+          git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
           git add .
           git commit -m "Update Values.yaml [skip ci]"
