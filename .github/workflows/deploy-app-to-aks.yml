@@ -1,7 +1,9 @@
 name: Deploy-App-on-AKS
-permissions:
-  id-token: write
-  contents: read
+
+# permissions:
+#   id-token: write
+#   contents: read
+
 on:
   workflow_dispatch:
     inputs:
