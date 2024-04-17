@@ -34,6 +34,6 @@ runs:
     - uses: azure/login@v1.4.0
       name: Log in using OIDC
       with:
-        tenant-id: ${{ inputs.tenant_id }}
-        client-id: ${{ inputs.client_id }}
-        subscription-id: ${{ inputs.subscription_id }}
+        tenant-id: 287e9555-a4e3-48b9-9f39-9c97477c736f
+        client-id: 6a7eceec-399a-462e-be05-8508a526be6e
+        subscription-id: f6e80462-2876-4bd9-893f-6802bd537f70
