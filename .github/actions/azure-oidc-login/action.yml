@@ -28,13 +28,11 @@ runs:
         pip install -q --extra-index-url https://azcliprod.blob.core.windows.net/beta/simple/ azure-cli
         echo "***************installed cli beta*******************"
         echo "$CWD/oidc-venv/bin" >> $GITHUB_PATH
+        echo "Tenant ID: ${{ inputs.tenant_id }}"
+        echo "Subscription ID: ${{ inputs.subscription_id }}"
+        echo "Client ID: ${{ inputs.client_id }}"
     - uses: azure/login@v1.4.0
       name: Log in using OIDC
-      run: |
-        echo "Logging in using OIDC"
-        echo "tenant-id: ${{ inputs.tenant_id }}"
-        echo "client-id: ${{ inputs.client_id }}"
-        echo "subscription-id: ${{ inputs.subscription_id }}"
       with:
         tenant-id: ${{ inputs.tenant_id }}
         client-id: ${{ inputs.client_id }}
