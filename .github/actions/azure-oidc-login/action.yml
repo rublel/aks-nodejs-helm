@@ -30,6 +30,11 @@ runs:
         echo "$CWD/oidc-venv/bin" >> $GITHUB_PATH
     - uses: azure/login@v1.4.0
       name: Log in using OIDC
+      run: |
+        echo "Logging in using OIDC"
+        echo "tenant-id: ${{ inputs.tenant_id }}"
+        echo "client-id: ${{ inputs.client_id }}"
+        echo "subscription-id: ${{ inputs.subscription_id }}"
       with:
         tenant-id: ${{ inputs.tenant_id }}
         client-id: ${{ inputs.client_id }}
